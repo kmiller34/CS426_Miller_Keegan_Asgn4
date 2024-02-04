@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Tutorial2.sln"
+    "dotnet.defaultSolution": "cs426_MightyCoders_Asgn2.sln"
 }
