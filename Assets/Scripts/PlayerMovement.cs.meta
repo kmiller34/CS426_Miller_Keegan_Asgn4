@@ -3,7 +3,12 @@ guid: 4e8250925179f44cbb3a822b2ff17f69
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spawnedPrefab: {fileID: 5023044676547890535, guid: b3312fb4269550b45b0ba8f04f93ee7d, type: 3}
+  - cannon: {instanceID: 0}
+  - bullet: {fileID: 8163957862715235771, guid: 115ef832de43b453e9590426af3cd830, type: 3}
+  - audioListener: {instanceID: 0}
+  - playerCamera: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
