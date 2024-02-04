@@ -6,6 +6,7 @@ using Unity.Netcode;
 // because we are using the NetworkBehaviour class
 // NewtorkBehaviour class is a part of the Unity.Netcode namespace
 // extension of MonoBehaviour that has functions related to multiplayer
+//orly was here 
 public class PlayerMovement : NetworkBehaviour
 {
     public float speed = 2f;
