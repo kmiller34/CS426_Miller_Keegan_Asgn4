@@ -35,7 +35,7 @@ public class PlayerMovement : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         GetComponent<Rigidbody>().freezeRotation = true;
+        GetComponent<Rigidbody>().freezeRotation = true;
     }
     // Update is called once per frame
     void Update()
@@ -45,41 +45,12 @@ public class PlayerMovement : NetworkBehaviour
         // not on the other prefabs 
         if (!IsOwner) return;
 
-        Vector3 moveDirection = new Vector3(0, 0, 0);
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            moveDirection.z = +1f;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            moveDirection.z = -1f;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            moveDirection.x = -1f;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            moveDirection.x = +1f;
-        }
-        transform.position += moveDirection * speed * Time.deltaTime;
-
+        HandleMovementInput();
+        HandleRotationInput();
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             Jump();
         }
-
-        // if I is pressed spawn the object 
-        // if J is pressed destroy the object
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            //instantiate the object
-            instantiatedPrefab = Instantiate(spawnedPrefab);
-            // spawn it on the scene
-            instantiatedPrefab.GetComponent<NetworkObject>().Spawn(true);
-        }
-
         if (Input.GetKeyDown(KeyCode.J))
         {
             //despawn the object
@@ -93,6 +64,38 @@ public class PlayerMovement : NetworkBehaviour
             // call the BulletSpawningServerRpc method
             // as client can not spawn objects
             BulletSpawningServerRpc(cannon.transform.position, cannon.transform.rotation);
+        }
+    }
+
+    void HandleMovementInput()
+    {
+        Vector3 moveDirection = new Vector3(0, 0, 0);
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            moveDirection.z = +1f;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            moveDirection.z = -1f;
+        }
+
+
+        transform.Translate(moveDirection * speed * Time.deltaTime);
+
+    }
+
+    void HandleRotationInput()
+    {
+        float rotationSpeed = 100.0f;
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
         }
     }
 

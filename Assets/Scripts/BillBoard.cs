@@ -17,6 +17,6 @@ public class BillBoard : MonoBehaviour
         board = Camera.main.transform.forward;
         board.y = 0;
 
-        transform.rotation = Quaternion.LookRotation(board);
+        // transform.rotation = Quaternion.LookRotation(board);
     }
 }

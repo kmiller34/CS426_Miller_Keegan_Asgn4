@@ -16,6 +16,7 @@ public class TeleportRoomOne : MonoBehaviour
         
     }
     void OnTriggerEnter(Collider Col){
-        Col.transform.position = new Vector3(505,0,160);
+        Col.transform.position = new Vector3(535,0,221);
+        Col.transform.rotation = Quaternion.identity;
     }
 }
