@@ -10,6 +10,7 @@ using Unity.Netcode;
 public class PlayerMovement : NetworkBehaviour
 {
     public float speed = 2f;
+    public float jumpForce = 5f;
     // create a list of colors
     public List<Color> colors = new List<Color>();
 
@@ -27,11 +28,14 @@ public class PlayerMovement : NetworkBehaviour
     // reference to the camera
     [SerializeField] private Camera playerCamera;
 
+    // bool to see if player is grounded or not.
+    private bool isGrounded;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+         GetComponent<Rigidbody>().freezeRotation = true;
     }
     // Update is called once per frame
     void Update()
@@ -61,6 +65,10 @@ public class PlayerMovement : NetworkBehaviour
         }
         transform.position += moveDirection * speed * Time.deltaTime;
 
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            Jump();
+        }
 
         // if I is pressed spawn the object 
         // if J is pressed destroy the object
@@ -88,6 +96,29 @@ public class PlayerMovement : NetworkBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        // Check if the player is grounded when colliding with a surface
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        // Set isGrounded to false when leaving a surface
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
+
+    void Jump()
+    {
+        // Apply the jump force to the player
+        GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
     // this method is called when the object is spawned
     // we will change the color of the objects
     public override void OnNetworkSpawn()
