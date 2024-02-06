@@ -61,8 +61,9 @@ public class wallCollapse : MonoBehaviour
             }
         }
         if(room3ObjectsDisappear){
-            Debug.Log("hello");
-            winner.text = "You WON!!!!!!";
+            winner.fontSize = 15;
+            winner.text = "Congrats, you won. The serious question is: What are the main differences between a SSD and a HDD in terms of performance and functionality, and in what scenarios would you recommend using one over the other?";
+            
         }
     }
 }

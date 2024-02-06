@@ -1043,10 +1043,9 @@ GameObject:
   - component: {fileID: 2457811683261708187}
   - component: {fileID: 3623288971552000695}
   - component: {fileID: 2171278434095952075}
-  - component: {fileID: 6881470001454690672}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1060,7 +1059,7 @@ Transform:
   m_GameObject: {fileID: 1054315726913127684}
   serializedVersion: 2
   m_LocalRotation: {x: 0.12339781, y: -0.010205229, z: 0.007731805, w: 0.9922747}
-  m_LocalPosition: {x: 1.685, y: 1.986, z: -3.104}
+  m_LocalPosition: {x: 1.685, y: 1.986, z: -3.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1125,33 +1124,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1054315726913127684}
   m_Enabled: 0
---- !u!54 &6881470001454690672
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1054315726913127684}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1131865524061312593
 GameObject:
   m_ObjectHideFlags: 0
@@ -4683,7 +4655,7 @@ Transform:
   m_GameObject: {fileID: 3486836817460905168}
   serializedVersion: 2
   m_LocalRotation: {x: -0.13392915, y: -0, z: -0, w: 0.99099094}
-  m_LocalPosition: {x: -0.024, y: 0.905, z: 0.058}
+  m_LocalPosition: {x: -0.024, y: 0.905, z: 1.37}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9140,9 +9112,9 @@ GameObject:
   - component: {fileID: 5483099980893980187}
   - component: {fileID: 4482979038001175869}
   - component: {fileID: 1468999507196518413}
-  - component: {fileID: 4790756173874708188}
   - component: {fileID: 1032583247534525809}
   - component: {fileID: 393352586758758203}
+  - component: {fileID: 455427315838381985}
   m_Layer: 0
   m_Name: CatPlayer
   m_TagString: Untagged
@@ -9160,7 +9132,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 670432148579021588}
@@ -9264,8 +9236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8250925179f44cbb3a822b2ff17f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 9
-  jumpForce: 5
+  speed: 20
+  jumpForce: 10
   colors:
   - {r: 1, g: 0, b: 0, a: 0}
   - {r: 0, g: 0.23312998, b: 1, a: 0}
@@ -9304,29 +9276,6 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!136 &4790756173874708188
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7002714630637250444}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1032583247534525809
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9366,6 +9315,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &455427315838381985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7002714630637250444}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1 &7071911787908444367
 GameObject:
   m_ObjectHideFlags: 0

@@ -163,4 +163,6 @@ public class PlayerMovement : NetworkBehaviour
         newBullet.GetComponent<Rigidbody>().AddForce(newBullet.transform.forward * 1500);
         // newBullet.GetComponent<NetworkObject>().Spawn(true);
     }
+
+    
 }

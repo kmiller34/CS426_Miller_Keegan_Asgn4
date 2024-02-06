@@ -4,22 +4,19 @@ using UnityEngine;
 
 public class ObjectTarget : MonoBehaviour
 {
-    // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
+    public GameObject textBox; // Reference to the text box above the target
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Bullet")) // Assuming the bullet is tagged as "Bullet"
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Destroy the target object
+            
+            // Check if textBox is assigned
+            if(textBox != null)
+            {
+                Destroy(textBox); // Destroy the text box
+            }
         }
     }
 }
