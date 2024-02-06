@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Target
+  - Bullet
+  - bullet
+  - Room2
+  - Room3
   layers:
   - Default
   - TransparentFX
