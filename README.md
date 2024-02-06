@@ -38,4 +38,5 @@ Sources:
 Cat Statues - https://assetstore.unity.com/packages/3d/environments/historic/egyptian-tomb-cat-statue-119784
 
 Cat players - https://assetstore.unity.com/packages/3d/characters/crazy-cats-toon-pack-39485
-Compute Parts - https://assetstore.unity.com/?q=POLY_computer&orderBy=1
+
+Computer Parts - https://assetstore.unity.com/?q=POLY_computer&orderBy=1
