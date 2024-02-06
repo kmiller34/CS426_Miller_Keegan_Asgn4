@@ -2,7 +2,7 @@
 
 Group Members: Al Kaleshi (Group Representative), Keegan miller, and Orlando Ortiz
 
-Brief Descrioption of Formal Elements:
+Brief Description of Formal Elements:
     Players: Cooperative, Two Players, cat prefabs applied to them with roles of shooting hardware components.
 
     Objective: Solution/Exploration. A Puzzle strategy game where the goal is for both players to complete the educational maze together through teamwork. It will be a series of task where you need to shoot the correct component to complete a computer using 3d objects.
