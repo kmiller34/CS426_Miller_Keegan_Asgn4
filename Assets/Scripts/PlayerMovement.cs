@@ -69,7 +69,12 @@ public class PlayerMovement : NetworkBehaviour
 
     void HandleMovementInput()
     {
+
+        if (!IsOwner) return;
+
         Vector3 moveDirection = new Vector3(0, 0, 0);
+
+
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -87,6 +92,8 @@ public class PlayerMovement : NetworkBehaviour
 
     void HandleRotationInput()
     {
+        if (!IsOwner) return;
+
         float rotationSpeed = 100.0f;
 
         if (Input.GetKey(KeyCode.A))
@@ -101,6 +108,7 @@ public class PlayerMovement : NetworkBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (!IsOwner) return;
         // Check if the player is grounded when colliding with a surface
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -110,6 +118,7 @@ public class PlayerMovement : NetworkBehaviour
 
     void OnCollisionExit(Collision collision)
     {
+        if (!IsOwner) return;
         // Set isGrounded to false when leaving a surface
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -119,6 +128,7 @@ public class PlayerMovement : NetworkBehaviour
 
     void Jump()
     {
+        if (!IsOwner) return;
         // Apply the jump force to the player
         GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
     }

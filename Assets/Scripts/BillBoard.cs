@@ -12,16 +12,16 @@ public class BillBoard : MonoBehaviour
     void Start()
     {
         // Initial attempt to find the main camera
-        TryFindMainCamera();
+        //TryFindMainCamera();
     }
 
     void TryFindMainCamera()
     {
         mainCamera = FindMainCamera();
-        if (mainCamera == null)
-        {
-            Debug.LogError("Main camera not found. Make sure there is a camera tagged as 'MainCamera' in your scene.");
-        }
+        // if (mainCamera == null)
+        // {
+        //     Debug.LogError("Main camera not found. Make sure there is a camera tagged as 'MainCamera' in your scene.");
+        // }
     }
 
     Camera FindMainCamera()
